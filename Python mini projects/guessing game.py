@@ -3,22 +3,20 @@ import random
 num = random.randint(1, 10)
 
 chances = 5
-guess = 0
-chances_left = 0
+guess_counter = 0
 
-while chances_left == 0:
+print("Wassup, welcome to a simple number guessing game")
+
+while chances > guess_counter:
     guess = int(input("Enter your guess: "))
+    guess_counter +1
 
-    if guess == num:
-        print("Correct guess")
+    if num < guess:
+        print("pick a lower number")
     
-    elif guess > num:
-        print("try a lower number")
-        chances_left -= chances
-
-    elif guess < num:
-        print("try a higher number")
-        chances_left -= chances
+    elif num > guess:
+        print("pick a higher number")
 
     else:
+        print("ggs, its Correct guess")
         break
